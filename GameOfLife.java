@@ -14,7 +14,7 @@ public class GameOfLife {
 		//// test1(fileName);
 		//// test2(fileName);
 		//// test3(fileName, 3);
-		play(fileName);
+		//// play(fileName);
 	}
 	
 	// Reads the data file and prints the initial board.
@@ -63,7 +63,7 @@ public class GameOfLife {
 	// and the rightmost columns. Thus the actual board is surrounded by a "frame" of zeros. You can think
 	// of this frame as representing the infinite number of dead cells that exist in every direction.
 	// This function assumes that the input file contains valid data, and does no input testing.
-	private static int[][] read(String fileName) {
+	public static int[][] read(String fileName) {
 		In in = new In(fileName); // Constructs an In object for reading the input file
 		int rows = Integer.parseInt(in.readLine());
 		int cols = Integer.parseInt(in.readLine());
@@ -111,7 +111,7 @@ public class GameOfLife {
 	// Creates a new board from the given board, using the rules of the game.
 	// Uses the cellValue(board,i,j) function to compute the value of each 
 	// cell in the new board. Returns the new board.
-	private static int[][] evolve(int[][] board) {
+	public static int[][] evolve(int[][] board) {
 		int[][] NewBoard = new int[board.length][board[0].length];
 		for (int i = 0; i < board.length; i++)
 		{
@@ -143,7 +143,7 @@ public class GameOfLife {
 	// Assumes that i is at least 1 and at most the number of rows in the board - 1. 
 	// Assumes that j is at least 1 and at most the number of columns in the board - 1. 
 	// Uses the count(board,i,j) function to count the number of alive neighbors.
-	private static int cellValue(int[][] board, int i, int j) {
+	public static int cellValue(int[][] board, int i, int j) {
 		if (board[i][j] == 1)
 		{
 			if (count(board, i, j) < 2)
@@ -171,7 +171,7 @@ public class GameOfLife {
 	// (The cell itself is not counted).
 	// Assumes that i is at least 1 and at most the number of rows in the board - 1. 
 	// Assumes that j is at least 1 and at most the number of columns in the board - 1. 
-	private static int count(int[][] board, int i, int j) {
+	public static int count(int[][] board, int i, int j) {
 		int LiveCellsCount = 0;
 		for (int k = i - 1; k <= i + 1; k++)
 		{
@@ -187,7 +187,7 @@ public class GameOfLife {
 	}
 	
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
-    private static void print(int[][] arr) {
+    public static void print(int[][] arr) {
 		for (int i = 0; i < arr.length; i++)
 		{
 			for (int j = 0; j < arr[i].length; j++)
@@ -203,7 +203,7 @@ public class GameOfLife {
     // In order to handle any given board size, we scale the X and Y dimensions according to the board size.
     // This results in the following visual effect: The smaller the board, the larger the squares
 	// representing cells.
-	private static void show(int[][] board) {
+	public static void show(int[][] board) {
 		StdDraw.setCanvasSize(900, 900);
 		int rows = board.length;
 		int cols = board[0].length;
