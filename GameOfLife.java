@@ -1,4 +1,4 @@
-/**  
+/** 
  *  Game of Life.
  *  Usage: "java GameOfLife fileName"
  *  The file represents the initial board.
@@ -18,14 +18,14 @@ public class GameOfLife {
 	}
 	
 	// Reads the data file and prints the initial board.
-	private static void test1(String fileName) {
+	public static void test1(String fileName) {
 		int[][] board = read(fileName);
 		print(board);
 	}
 		
 	// Reads the data file, and runs a test that checks 
 	// the count and cellValue functions.
-	private static void test2(String fileName) {
+	public static void test2(String fileName) {
 		int[][] board = read(fileName);
 		for (int i = 1; i < board.length - 1; i++)
 		{
@@ -38,7 +38,7 @@ public class GameOfLife {
 		
 	// Reads the data file, plays the game for Ngen generations, 
 	// and prints the board at the beginning of each generation.
-	private static void test3(String fileName, int Ngen) {
+	public static void test3(String fileName, int Ngen) {
 		int[][] board = read(fileName);
 		for (int gen = 0; gen < Ngen; gen++) {
 			System.out.println("Generation " + gen + ":");
@@ -48,7 +48,7 @@ public class GameOfLife {
 	}
 		
 	// Reads the data file and plays the game, for ever.
-	private static void play(String fileName) {
+	public static void play(String fileName) {
 		int[][] board = read(fileName);
 		while (true) {
 			show(board);
