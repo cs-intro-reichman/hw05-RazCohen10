@@ -1,4 +1,4 @@
-/** 
+/**  
  *  Game of Life.
  *  Usage: "java GameOfLife fileName"
  *  The file represents the initial board.
